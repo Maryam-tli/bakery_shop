@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -12,36 +14,36 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>Flaury Bakery</title><link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="plugins/bootstrap4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/owl-carousel/assets/owl.carousel.css">
-    <link rel="stylesheet" href="plugins/slick/slick/slick.css">
-    <link rel="stylesheet" href="plugins/lightGallery-master/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
-    <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.min.css">
-    <link rel="stylesheet" href="plugins/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="plugins/chikery-icon/style.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap4/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/owl-carousel/assets/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/lightGallery-master/dist/css/lightgallery.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-ui/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/select2/dist/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/chikery-icon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
     <header class="header header--1" data-sticky="true">
       <div class="header__left"><a class="menu-toggle ps-modal-link" href="#menu-fullscreen"><span></span></a>
         <p><i class="fa fa-clock-o"></i> 08:00 am - 08:30 pm</p>
       </div>
-      <div class="header__center"><a class="ps-logo" href="index-2.html"><img src="img/logo.png" alt=""></a></div>
+      <div class="header__center"><a class="ps-logo" href="index-2.html"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
       <div class="header__right">
         <div class="header__actions"><a class="ps-search-btn" href="#"><i class="fa fa-search"></i></a><a href="#"><i class="fa fa-heart-o"></i></a>
           <div class="ps-cart--mini"><a class="ps-cart__toggle" href="#"><i class="fa fa-shopping-basket"></i><span><i>2</i></span></a>
             <div class="ps-cart__content">
               <div class="ps-cart__items">
                 <div class="ps-product--mini-cart">
-                  <div class="ps-product__thumbnail"><a href="#"><img src="img/product/12.png" alt=""></a></div>
+                  <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/12.png' %}" alt=""></a></div>
                   <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                     <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                   </div>
                 </div>
                 <div class="ps-product--mini-cart">
-                  <div class="ps-product__thumbnail"><a href="#"><img src="img/product/13.png" alt=""></a></div>
+                  <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/13.png' %}" alt=""></a></div>
                   <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                     <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                   </div>
@@ -57,19 +59,19 @@
       </div>
     </header>
     <div class="ps-modal" id="menu-fullscreen">
-      <div class="header--fullscreen ps-modal__container bg--cover" data-background="img/bg/menu-bg.jpg"><a class="ps-modal__close ps-btn--close" href="#"></a>
-        <div class="header__top"><a class="ps-logo" href="#"><img src="img/logo.png" alt=""></a></div>
+      <div class="header--fullscreen ps-modal__container bg--cover" data-background="{% static 'img/bg/menu-bg.jpg' %}"><a class="ps-modal__close ps-btn--close" href="#"></a>
+        <div class="header__top"><a class="ps-logo" href="#"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
         <div class="header__content">
           <ul class="menu--fullscreen">
-            <li class="current-menu-item "><a href="index-2.html">Home</a>
+            <li class="current-menu-item "><a href="{% url 'home' %}">Home</a>
             </li>
-            <li><a href="about-us.html">About</a>
+            <li><a href="{% url 'about' %}">About</a>
             </li>
             <li><a href="about-us.html">Pages</a>
             </li>
             <li><a href="blog-grid.html">News</a>
             </li>
-            <li><a href="contact-us.html">Contact</a>
+            <li><a href="{% url 'contact' %}">Contact</a>
             </li>
           </ul>
         </div>
@@ -88,7 +90,7 @@
     <header class="header header--mobile" data-sticky="false">
       <div class="header__content">
         <div class="header__left"><a class="ps-toggle--sidebar" href="#navigation-mobile"><i class="fa fa-bars"></i></a></div>
-        <div class="header__center"><a class="ps-logo" href="#"><img src="img/logo.png" alt=""></a></div>
+        <div class="header__center"><a class="ps-logo" href="#"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
         <div class="header__right">
           <div class="header__actions"><a href="#"><i class="fa fa-heart-o"></i></a></div>
         </div>
@@ -103,13 +105,13 @@
           <div class="ps-cart__content">
             <div class="ps-cart__items">
               <div class="ps-product--mini-cart">
-                <div class="ps-product__thumbnail"><a href="#"><img src="img/product/12.png" alt=""></a></div>
+                <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/12.png' %}" alt=""></a></div>
                 <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                   <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                 </div>
               </div>
               <div class="ps-product--mini-cart">
-                <div class="ps-product__thumbnail"><a href="#"><img src="img/product/13.png" alt=""></a></div>
+                <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/13.png' %}" alt=""></a></div>
                 <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                   <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                 </div>
@@ -215,31 +217,31 @@
     <div id="homepage-1">
       <div class="ps-home-banner">
         <div class="ps-carousel--dots owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="5000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="off" data-owl-animate-in="fadeIn" data-owl-animate-out="fadeOut">
-          <div class="ps-banner ps-banner--1 bg--cover" data-background="img/banner/home-1/1.jpg">
+          <div class="ps-banner ps-banner--1 bg--cover" data-background="{% static 'img/banner/home-1/1.jpg' %}">
             <div class="ps-banner__content">
               <h3>Super Delicious Cake</h3>
-              <p>100% Natural, FRESH baked goods</p><a class="ps-btn" href="#"> Book Now</a>
+              <p>100% Natural, FRESH baked goods</p><a class="ps-btn" href="#reservation-form">Book Now</a>
             </div>
           </div>
-          <div class="ps-banner ps-banner--1 bg--cover" data-background="img/banner/home-1/2.jpg">
+          <div class="ps-banner ps-banner--1 bg--cover" data-background="{% static 'img/banner/home-1/2.jpg' %}">
             <div class="ps-banner__content">
               <h3>Super Delicious Cake</h3>
-              <p>100% Natural, FRESH baked goods</p><a class="ps-btn" href="#"> Book Now</a>
+              <p>100% Natural, FRESH baked goods</p><a class="ps-btn" href="#reservation-form">Book Now</a>
             </div>
           </div>
-          <div class="ps-banner ps-banner--1 bg--cover" data-background="img/banner/home-1/3.jpg">
+          <div class="ps-banner ps-banner--1 bg--cover" data-background="{% static 'img/banner/home-1/3.jpg' %}">
             <div class="ps-banner__content">
               <h3>Super Delicious Cake</h3>
-              <p>100% Natural, FRESH baked goods</p><a class="ps-btn" href="#"> Book Now</a>
+              <p>100% Natural, FRESH baked goods</p><a class="ps-btn" href="#reservation-form">Book Now</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="ps-section ps-home-about bg--cover" data-background="img/bg/home-about.jpg">
+      <div class="ps-section ps-home-about bg--cover" data-background="{% static 'img/bg/home-about.jpg' %}">
         <div class="container">
           <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
-              <div class="ps-section__image"><img src="img/homepage/home-1/home-about.png" alt=""></div>
+              <div class="ps-section__image"><img src="{% static 'img/homepage/home-1/home-about.png' %}" alt=""></div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
               <div class="ps-section__header">
@@ -248,7 +250,7 @@
               </div>
               <div class="ps-section__content">
                 <p>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis feugiat, mollis felis vel, viverra metus. Sed vel nulla non neque dictum imperdiet hendrerit ”</p>
-                <div class="ps-section__image"><img src="img/homepage/home-1/signature.png" alt=""></div>
+                <div class="ps-section__image"><img src="{% static 'img/homepage/home-1/signature.png' %}" alt=""></div>
                 <h5><span>Marry Lulie</span> - Ceo Chikery</h5>
               </div>
             </div>
@@ -256,7 +258,7 @@
         </div>
       </div>
       <div class="ps-section ps-home-best-services">
-        <div class="ps-section__left bg--cover" data-background="img/bg/home-1/home-best-services.jpg"></div>
+        <div class="ps-section__left bg--cover" data-background="{% static 'img/bg/home-1/home-best-services.jpg' %}"></div>
         <div class="ps-section__right">
           <div class="ps-section__container">
             <div class="ps-section__header">
@@ -274,7 +276,7 @@
               </ul>
             </div>
           </div>
-          <div class="ps-section__image bg--cover" data-background="img/bg/home-1/home-best-services-2.jpg"></div>
+          <div class="ps-section__image bg--cover" data-background="{% static 'img/bg/home-1/home-best-services-2.jpg' %}"></div>
         </div>
       </div>
       <div class="ps-section ps-home-menu-of-day">
@@ -298,7 +300,7 @@
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/2.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/2.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -307,7 +309,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/41.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/41.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -316,7 +318,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/9.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/9.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -327,7 +329,7 @@
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/23.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/23.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -336,7 +338,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/3.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/3.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -345,7 +347,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/9.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/9.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -360,7 +362,7 @@
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/1.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/1.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -369,7 +371,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/2.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/2.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -378,7 +380,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/3.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/3.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -389,7 +391,7 @@
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/4.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/4.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -398,7 +400,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/5.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/5.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -407,7 +409,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/6.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/6.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -422,7 +424,7 @@
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/7.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/7.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -431,7 +433,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/8.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/8.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -440,7 +442,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/9.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/9.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -451,7 +453,7 @@
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/21.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/21.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -460,7 +462,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/11.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/11.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -469,7 +471,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/12.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/12.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -484,7 +486,7 @@
                   <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/13.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/13.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -493,7 +495,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/14.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/14.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -502,7 +504,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/15.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/15.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -513,7 +515,7 @@
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/16.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/16.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -522,7 +524,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/17.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/17.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -531,7 +533,7 @@
                         </div>
                       </div>
                       <div class="ps-product--horizontal">
-                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="img/product/18.png" alt=""/></div>
+                        <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="{% static 'img/product/18.png' %}" alt=""/></div>
                         <div class="ps-product__container">
                           <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
                             <p>Nam ac elit a ante commodo tristique</p>
@@ -546,7 +548,7 @@
             </div>
           </div>
         </div>
-        <div class="ps-section__right bg--cover" data-background="img/bg/home-1/home-menu-of-day.jpg"></div>
+        <div class="ps-section__right bg--cover" data-background="{% static 'img/bg/home-1/home-menu-of-day.jpg' %}"></div>
       </div>
       <div class="ps-section ps-home-product">
         <div class="container-fluid">
@@ -558,7 +560,7 @@
             <div class="row">
               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 ">
                 <div class="ps-product">
-                  <div class="ps-product__thumbnail"><img src="img/product/17.png" alt=""/><a class="ps-product__overlay" href="product-default.html"></a><span class="ps-badge ps-badge--sale"><i>30%</i></span>
+                  <div class="ps-product__thumbnail"><img src="{% static 'img/product/17.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a><span class="ps-badge ps-badge--sale"><i>30%</i></span>
                   </div>
                   <div class="ps-product__content">
                     <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
@@ -572,7 +574,7 @@
               </div>
               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 ">
                 <div class="ps-product">
-                  <div class="ps-product__thumbnail"><img src="img/product/31.png" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
+                  <div class="ps-product__thumbnail"><img src="{% static 'img/product/31.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
                   </div>
                   <div class="ps-product__content">
                     <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
@@ -586,7 +588,7 @@
               </div>
               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 ">
                 <div class="ps-product">
-                  <div class="ps-product__thumbnail"><img src="img/product/13.png" alt=""/><a class="ps-product__overlay" href="product-default.html"></a><span class="ps-badge ps-badge--new"><i>New</i></span>
+                  <div class="ps-product__thumbnail"><img src="{% static 'img/product/13.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a><span class="ps-badge ps-badge--new"><i>New</i></span>
                   </div>
                   <div class="ps-product__content">
                     <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
@@ -600,7 +602,7 @@
               </div>
               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 ">
                 <div class="ps-product">
-                  <div class="ps-product__thumbnail"><img src="img/product/33.png" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
+                  <div class="ps-product__thumbnail"><img src="{% static 'img/product/33.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
                   </div>
                   <div class="ps-product__content">
                     <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
@@ -617,7 +619,7 @@
           <div class="ps-section__footer"><a class="ps-btn ps-btn--outline" href="#"> All products</a></div>
         </div>
       </div>
-      <div class="ps-section ps-testimonials bg--cover" data-background="img/bg/testimonials.jpg">
+      <div class="ps-section ps-testimonials bg--cover" data-background="{% static 'img/bg/testimonials.jpg' %}">
         <div class="container">
           <div class="ps-section__header">
             <p>Testimonial</p>
@@ -654,14 +656,14 @@
         </div>
       </div>
       <div class="ps-home-book-table">
-        <div class="ps-section__left bg--cover" data-background="img/section/book-your-tables/bg.jpg">
+        <div class="ps-section__left bg--cover" data-background="{% static 'img/section/book-your-tables/bg.jpg' %}">
           <div class="ps-section__content">
             <p>Video Present</p>
             <h3>Any Design <br/> For Your Feast-day</h3>
             <div class="ps-video"><a href="https://www.youtube.com/watch?v=2_g48Zw0rao"><i class="fa fa-play"></i></a></div>
           </div>
         </div>
-        <div class="ps-section__right">
+        <div class="ps-section__right" id="reservation-form">
           <form class="ps-form--book-your-table" action="#" method="get">
             <div class="ps-form__header">
               <h4>Chikery Cake</h4>
@@ -672,32 +674,32 @@
               <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Name">
+                    <input class="form-control" type="text" placeholder="name">
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Phone">
+                    <input class="form-control" type="text" placeholder="phone">
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="email" placeholder="Email">
+                    <input class="form-control" type="email" placeholder="email">
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Number of People">
+                    <input class="form-control" type="text" placeholder="guests">
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Date">
+                    <input class="form-control" type="text" placeholder="date">
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Time">
+                    <input class="form-control" type="text" placeholder="time">
                   </div>
                 </div>
               </div>
@@ -724,7 +726,7 @@
             </form>
           </div>
           <div class="ps-footer__center">
-            <div class="ps-site-info"><a class="ps-logo" href="index-2.html"><img src="img/logo.png" alt=""></a>
+            <div class="ps-site-info"><a class="ps-logo" href="index-2.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
               <p>004 Riley Street, Surry Hills 2050 Sydney, Australia</p>
               <p>Email:<a href="#"> <span class="__cf_email__" data-cfemail="1d74737b725d73726869757870786e337e7270">[email&#160;protected]</span></a></p>
               <p>Phone:<span class="ps-hightlight"> +455 45 454555</span></p>
@@ -759,7 +761,7 @@
       </div>
     </footer>
     <div class="ps-popup" id="subscribe" data-time="500">
-      <div class="ps-popup__content bg--cover" data-background="img/bg/subcribe.jpg"><a class="ps-popup__close ps-btn--close" href="#"></a>
+      <div class="ps-popup__content bg--cover" data-background="{% static 'img/bg/subcribe.jpg' %}"><a class="ps-popup__close ps-btn--close" href="#"></a>
         <form class="ps-form--subscribe-popup" action="#" method="get">
           <div class="ps-form__content">
             <h5>Newletters</h5>
@@ -792,24 +794,24 @@
       </div>
     </div>
     <!-- Plugins-->
-    <script src="plugins/jquery-1.12.4.min.js"></script>
-    <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
-    <script src="plugins/bootstrap4/js/bootstrap.min.js"></script>
-    <script src="plugins/imagesloaded.pkgd.js"></script>
-    <script src="plugins/masonry.pkgd.min.js"></script>
-    <script src="plugins/isotope.pkgd.min.js"></script>
-    <script src="plugins/jquery.matchHeight-min.js"></script>
-    <script src="plugins/slick/slick/slick.min.js"></script>
-    <script src="plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
-    <script src="plugins/slick-animation.min.js"></script>
-    <script src="plugins/lightGallery-master/dist/js/lightgallery-all.min.js"></script>
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script src="plugins/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
-    <script src="plugins/jquery.slimscroll.min.js"></script>
-    <script src="plugins/select2/dist/js/select2.full.min.js"></script>
-    <script src="plugins/gmap3.min.js"></script>
-    <!-- Custom scripts-->
-    <script src="js/main.js"></script>
+    <script src="{% static 'plugins/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap4/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/imagesloaded.pkgd.js' %}"></script>
+    <script src="{% static 'plugins/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugins/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery.matchHeight-min.js' %}"></script>
+    <script src="{% static 'plugins/slick/slick/slick.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-bar-rating/dist/jquery.barrating.min.js' %}"></script>
+    <script src="{% static 'plugins/slick-animation.min.js' %}"></script>
+    <script src="{% static 'plugins/lightGallery-master/dist/js/lightgallery-all.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'plugins/sticky-sidebar/dist/sticky-sidebar.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery.slimscroll.min.js' %}"></script>
+    <script src="{% static 'plugins/select2/dist/js/select2.full.min.js' %}"></script>
+    <script src="{% static 'plugins/gmap3.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=REMOVED_API_KEY&amp;region=GB"></script>
   </body>
 

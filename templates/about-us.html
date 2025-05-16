@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -11,17 +13,17 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Chikery | HTML Template</title><link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="plugins/bootstrap4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/owl-carousel/assets/owl.carousel.css">
-    <link rel="stylesheet" href="plugins/slick/slick/slick.css">
-    <link rel="stylesheet" href="plugins/lightGallery-master/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
-    <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.min.css">
-    <link rel="stylesheet" href="plugins/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="plugins/chikery-icon/style.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Flaury Bakery</title><link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap4/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/owl-carousel/assets/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/lightGallery-master/dist/css/lightgallery.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-ui/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/select2/dist/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/chikery-icon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
     <header class="header header--default header--home-4 line" data-sticky="true">
@@ -36,84 +38,24 @@
       <div class="header__center">
         <nav class="header__navigation left">
           <ul class="menu">
-            <li class="menu-item-has-children"><a href="index-2.html">Home</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-              <ul class="sub-menu">
-                <li class="current-menu-item "><a href="index-2.html">Homepage 1</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-2.html">Homepage 2</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-3.html">Homepage 3</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-4.html">Homepage 4</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-5.html">Homepage 5</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-6.html">Homepage 6</a>
-                </li>
-              </ul>
+            <li class="menu-item-has-children"><a href="{% url 'home' %}">Home</a>
             </li>
             <li class="menu-item-has-children"><a href="shop-default.html">Shop</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
               <ul class="sub-menu">
-                <li class="current-menu-item "><a href="shop-default.html">Shop Default</a>
-                </li>
-                <li class="current-menu-item "><a href="shop-fullwidth.html">Shop Fullwidth</a>
-                </li>
-                <li class="current-menu-item "><a href="shop-fullwidth-no-sidebar.html">Shop Fullwidth No Sidebar</a>
-                </li>
-                <li class="current-menu-item "><a href="shop-no-sidebar.html">Shop No Sidebar</a>
-                </li>
-                <li class="current-menu-item "><a href="shop-sidebar-right.html">Shop Sidebar Right</a>
-                </li>
-                <li class="current-menu-item "><a href="shop-horizontal.html">Shop Horizontal</a>
-                </li>
                 <li class="menu-item-has-children"><a href="product-default.html">Product</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
                   <ul class="sub-menu">
-                    <li class="current-menu-item "><a href="product-default.html">Product Default</a>
-                    </li>
-                    <li class="current-menu-item "><a href="product-background.html">Product Background</a>
-                    </li>
-                    <li class="current-menu-item "><a href="product-background-center.html">Product Background Center</a>
-                    </li>
-                    <li class="current-menu-item "><a href="product-background-center-2.html">Product Background Center 2</a>
-                    </li>
-                    <li class="current-menu-item "><a href="product-sticky.html">Product Sticky</a>
-                    </li>
-                    <li class="current-menu-item "><a href="product-thumbnail-left.html">Product Thumbnail Left</a>
+                    <li class="current-menu-item "><a href="product-default.html">Product Details</a>
                     </li>
                   </ul>
                 </li>
               </ul>
             </li>
-            <li class="current-menu-item "><a href="about-us.html">About</a>
-            </li>
           </ul>
         </nav>
-        <div class="header__logo"><a class="ps-logo" href="index-2.html"><img src="img/logo.png" alt=""></a></div>
+        <div class="header__logo"><a class="ps-logo" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
         <nav class="header__navigation right">
           <ul class="menu">
-            <li class="menu-item-has-children"><a href="about-us.html">Pages</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-              <ul class="sub-menu">
-                <li class="current-menu-item "><a href="about-us.html">About</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-2.html">Checkout</a>
-                </li>
-                <li class="current-menu-item "><a href="whishlist.html">Whishlist</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-4.html">Compare</a>
-                </li>
-              </ul>
-            </li>
             <li class="menu-item-has-children"><a href="blog-grid.html">News</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-              <ul class="sub-menu">
-                <li class="current-menu-item "><a href="blog-grid.html">Blog grid</a>
-                </li>
-                <li class="current-menu-item "><a href="blog-grid-fullwidth.html">Blog grid fullwidth</a>
-                </li>
-                <li class="current-menu-item "><a href="blog-list.html">Blog List</a>
-                </li>
-                <li class="current-menu-item "><a href="blog-detail.html">Blog Detail</a>
-                </li>
-              </ul>
             </li>
             <li class="current-menu-item "><a href="contact-us.html">Contact</a>
             </li>
@@ -126,13 +68,13 @@
             <div class="ps-cart__content">
               <div class="ps-cart__items">
                 <div class="ps-product--mini-cart">
-                  <div class="ps-product__thumbnail"><a href="#"><img src="img/product/12.png" alt=""></a></div>
+                  <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/12.png' %}" alt=""></a></div>
                   <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                     <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                   </div>
                 </div>
                 <div class="ps-product--mini-cart">
-                  <div class="ps-product__thumbnail"><a href="#"><img src="img/product/13.png" alt=""></a></div>
+                  <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/13.png' %}" alt=""></a></div>
                   <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                     <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                   </div>
@@ -150,7 +92,7 @@
     <header class="header header--mobile" data-sticky="false">
       <div class="header__content">
         <div class="header__left"><a class="ps-toggle--sidebar" href="#navigation-mobile"><i class="fa fa-bars"></i></a></div>
-        <div class="header__center"><a class="ps-logo" href="#"><img src="img/logo.png" alt=""></a></div>
+        <div class="header__center"><a class="ps-logo" href="#"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
         <div class="header__right">
           <div class="header__actions"><a href="#"><i class="fa fa-heart-o"></i></a></div>
         </div>
@@ -165,13 +107,13 @@
           <div class="ps-cart__content">
             <div class="ps-cart__items">
               <div class="ps-product--mini-cart">
-                <div class="ps-product__thumbnail"><a href="#"><img src="img/product/12.png" alt=""></a></div>
+                <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/12.png' %}" alt=""></a></div>
                 <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                   <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                 </div>
               </div>
               <div class="ps-product--mini-cart">
-                <div class="ps-product__thumbnail"><a href="#"><img src="img/product/13.png" alt=""></a></div>
+                <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/13.png' %}" alt=""></a></div>
                 <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                   <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                 </div>
@@ -275,7 +217,7 @@
     </div>
     <!--include search-sidebar-->
     <div class="ps-page--about">
-      <div class="ps-hero bg--cover" data-background="img/hero/shop-hero.png">
+      <div class="ps-hero bg--cover" data-background="{% static 'img/hero/shop-hero.png' %}">
         <div class="ps-hero__container">
           <div class="ps-breadcrumb">
             <ul class="breadcrumb">
@@ -286,7 +228,7 @@
           <h1 class="ps-hero__heading">About Us</h1>
         </div>
       </div>
-      <div class="ps-section ps-home-awards bg--cover" data-background="img/bg/home-2/home-award.jpg">
+      <div class="ps-section ps-home-awards bg--cover" data-background="{% static 'img/bg/home-2/home-award.jpg' %}">
         <div class="container">
           <div class="ps-section__header">
             <p>CHIKER STORE</p>
@@ -296,7 +238,7 @@
             <div class="row">
               <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
                 <div class="ps-block--award">
-                  <div class="ps-block__header"><img src="img/awards/1.png" alt="">
+                  <div class="ps-block__header"><img src="{% static 'img/awards/1.png' %}" alt="">
                     <h4>BAKERY OF THE YEAR</h4>
                     <p>1990 - 2010</p>
                   </div>
@@ -307,7 +249,7 @@
               </div>
               <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
                 <div class="ps-block--award">
-                  <div class="ps-block__header"><img src="img/awards/2.png" alt="">
+                  <div class="ps-block__header"><img src="{% static 'img/awards/2.png' %}" alt="">
                     <h4>CUPCAKES SHOP OF THE YEAR</h4>
                     <p>2012 - 2018</p>
                   </div>
@@ -318,7 +260,7 @@
               </div>
               <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 ">
                 <div class="ps-block--award">
-                  <div class="ps-block__header"><img src="img/awards/3.png" alt="">
+                  <div class="ps-block__header"><img src="{% static 'img/awards/3.png' %}" alt="">
                     <h4>Awards Bakery academy</h4>
                     <p>2012 - 2018</p>
                   </div>
@@ -341,18 +283,18 @@
               </div>
               <div class="ps-section__content">
                 <p>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis feugiat, mollis felis vel, viverra metus. Sed vel nulla non neque dictum imperdiet hendrerit ”</p>
-                <div class="ps-section__image"><img src="img/homepage/home-1/signature.png" alt=""></div>
+                <div class="ps-section__image"><img src="{% static 'img/homepage/home-1/signature.png' %}" alt=""></div>
                 <h5><span>Marry Lulie</span> - Ceo Chikery</h5>
               </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
-              <div class="ps-section__image"><img src="img/homepage/home-3/home-about.png" alt=""></div>
+              <div class="ps-section__image"><img src="{% static 'img/homepage/home-3/home-about.png' %}" alt=""></div>
             </div>
           </div>
         </div>
       </div>
       <div class="ps-section ps-home-best-services">
-        <div class="ps-section__left bg--cover" data-background="img/bg/home-1/home-best-services.jpg"></div>
+        <div class="ps-section__left bg--cover" data-background="{% static 'img/bg/home-1/home-best-services.jpg' %}"></div>
         <div class="ps-section__right">
           <div class="ps-section__container">
             <div class="ps-section__header">
@@ -370,10 +312,10 @@
               </ul>
             </div>
           </div>
-          <div class="ps-section__image bg--cover" data-background="img/bg/home-1/home-best-services-2.jpg"></div>
+          <div class="ps-section__image bg--cover" data-background="{% static 'img/bg/home-1/home-best-services-2.jpg' %}"></div>
         </div>
       </div>
-      <div class="ps-section ps-home-video bg--cover" data-background="img/bg/pages/about-video.jpg">
+      <div class="ps-section ps-home-video bg--cover" data-background="{% static 'img/bg/pages/about-video.jpg' %}">
         <div class="container">
           <div class="ps-section__header">
             <p>Video Present</p>
@@ -389,12 +331,12 @@
           </div>
           <div class="ps-section__content">
             <div class="ps-block--good-baker">
-              <div class="ps-block__left"><img src="img/homepage/home-3/good-baker.png" alt=""></div>
+              <div class="ps-block__left"><img src="{% static 'img/homepage/home-3/good-baker.png' %}" alt=""></div>
               <div class="ps-block__right">
                 <h4>Jont Henrry</h4>
                 <h5>Chef, Co - accfounder</h5>
                 <p>Sed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis feugiat, mollis felis vel, viverra metus. Sed vel nulla non neque dictum imperdiet. Aliquam egestas hendrerit euismod.</p>
-                <div class="ps-block__images"><img src="img/users/bakers/1.png" alt=""><img src="img/users/bakers/2.png" alt=""><img src="img/users/bakers/3.png" alt=""></div>
+                <div class="ps-block__images"><img src="{% static 'img/users/bakers/1.png' %}" alt=""><img src="{% static 'img/users/bakers/2.png' %}" alt=""><img src="{% static 'img/users/bakers/3.png' %}" alt=""></div>
               </div>
             </div>
           </div>
@@ -416,7 +358,7 @@
             </form>
           </div>
           <div class="ps-footer__center">
-            <div class="ps-site-info"><a class="ps-logo" href="index-2.html"><img src="img/logo.png" alt=""></a>
+            <div class="ps-site-info"><a class="ps-logo" href="index-2.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
               <p>004 Riley Street, Surry Hills 2050 Sydney, Australia</p>
               <p>Email:<a href="#"> <span class="__cf_email__" data-cfemail="167f78707956787963627e737b73653875797b">[email&#160;protected]</span></a></p>
               <p>Phone:<span class="ps-hightlight"> +455 45 454555</span></p>
@@ -465,24 +407,23 @@
       </div>
     </div>
     <!-- Plugins-->
-    <script src="plugins/jquery-1.12.4.min.js"></script>
-    <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
-    <script src="plugins/bootstrap4/js/bootstrap.min.js"></script>
-    <script src="plugins/imagesloaded.pkgd.js"></script>
-    <script src="plugins/masonry.pkgd.min.js"></script>
-    <script src="plugins/isotope.pkgd.min.js"></script>
-    <script src="plugins/jquery.matchHeight-min.js"></script>
-    <script src="plugins/slick/slick/slick.min.js"></script>
-    <script src="plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
-    <script src="plugins/slick-animation.min.js"></script>
-    <script src="plugins/lightGallery-master/dist/js/lightgallery-all.min.js"></script>
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script src="plugins/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
-    <script src="plugins/jquery.slimscroll.min.js"></script>
-    <script src="plugins/select2/dist/js/select2.full.min.js"></script>
-    <script src="plugins/gmap3.min.js"></script>
-    <!-- Custom scripts-->
-    <script src="js/main.js"></script>
+    <script src="{% static 'plugins/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap4/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/imagesloaded.pkgd.js' %}"></script>
+    <script src="{% static 'plugins/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugins/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery.matchHeight-min.js' %}"></script>
+    <script src="{% static 'plugins/slick/slick/slick.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-bar-rating/dist/jquery.barrating.min.js' %}"></script>
+    <script src="{% static 'plugins/slick-animation.min.js' %}"></script>
+    <script src="{% static 'plugins/lightGallery-master/dist/js/lightgallery-all.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'plugins/sticky-sidebar/dist/sticky-sidebar.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery.slimscroll.min.js' %}"></script>
+    <script src="{% static 'plugins/select2/dist/js/select2.full.min.js' %}"></script>
+    <script src="{% static 'plugins/gmap3.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=REMOVED_API_KEY&amp;region=GB"></script>
   </body>
 

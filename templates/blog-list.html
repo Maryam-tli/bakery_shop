@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -11,17 +13,17 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Chikery | HTML Template</title><link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="plugins/bootstrap4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/owl-carousel/assets/owl.carousel.css">
-    <link rel="stylesheet" href="plugins/slick/slick/slick.css">
-    <link rel="stylesheet" href="plugins/lightGallery-master/dist/css/lightgallery.min.css">
-    <link rel="stylesheet" href="plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
-    <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.min.css">
-    <link rel="stylesheet" href="plugins/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="plugins/chikery-icon/style.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Flaury Bakery</title><link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap4/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/owl-carousel/assets/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/lightGallery-master/dist/css/lightgallery.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/jquery-ui/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/select2/dist/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/chikery-icon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
     <header class="header header--default header--home-4 line" data-sticky="true">
@@ -88,7 +90,7 @@
             </li>
           </ul>
         </nav>
-        <div class="header__logo"><a class="ps-logo" href="index-2.html"><img src="img/logo.png" alt=""></a></div>
+        <div class="header__logo"><a class="ps-logo" href="index-2.html"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
         <nav class="header__navigation right">
           <ul class="menu">
             <li class="menu-item-has-children"><a href="about-us.html">Pages</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
@@ -126,13 +128,13 @@
             <div class="ps-cart__content">
               <div class="ps-cart__items">
                 <div class="ps-product--mini-cart">
-                  <div class="ps-product__thumbnail"><a href="#"><img src="img/product/12.png" alt=""></a></div>
+                  <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/12.png' %}" alt=""></a></div>
                   <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                     <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                   </div>
                 </div>
                 <div class="ps-product--mini-cart">
-                  <div class="ps-product__thumbnail"><a href="#"><img src="img/product/13.png" alt=""></a></div>
+                  <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/13.png' %}" alt=""></a></div>
                   <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                     <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                   </div>
@@ -150,7 +152,7 @@
     <header class="header header--mobile" data-sticky="false">
       <div class="header__content">
         <div class="header__left"><a class="ps-toggle--sidebar" href="#navigation-mobile"><i class="fa fa-bars"></i></a></div>
-        <div class="header__center"><a class="ps-logo" href="#"><img src="img/logo.png" alt=""></a></div>
+        <div class="header__center"><a class="ps-logo" href="#"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
         <div class="header__right">
           <div class="header__actions"><a href="#"><i class="fa fa-heart-o"></i></a></div>
         </div>
@@ -165,13 +167,13 @@
           <div class="ps-cart__content">
             <div class="ps-cart__items">
               <div class="ps-product--mini-cart">
-                <div class="ps-product__thumbnail"><a href="#"><img src="img/product/12.png" alt=""></a></div>
+                <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/12.png' %}" alt=""></a></div>
                 <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                   <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                 </div>
               </div>
               <div class="ps-product--mini-cart">
-                <div class="ps-product__thumbnail"><a href="#"><img src="img/product/13.png" alt=""></a></div>
+                <div class="ps-product__thumbnail"><a href="#"><img src="{% static 'img/product/13.png' %}" alt=""></a></div>
                 <div class="ps-product__content"><span class="ps-btn--close"></span><a class="ps-product__title" href="product-default.html">Jean Woman Summer</a>
                   <p><strong>Quantity: 1</strong></p><small>$12.00</small>
                 </div>
@@ -275,7 +277,7 @@
     </div>
     <!--include search-sidebar-->
     <div class="ps-page">
-      <div class="ps-hero bg--cover" data-background="img/hero/shop-hero.png">
+      <div class="ps-hero bg--cover" data-background="{% static 'img/hero/shop-hero.png' %}">
         <div class="ps-hero__container">
           <div class="ps-breadcrumb">
             <ul class="breadcrumb">
@@ -290,28 +292,28 @@
         <div class="ps-blog ps-blog--sidebar">
           <div class="ps-blog__left">
             <div class="ps-post">
-              <div class="ps-post__thumbnail"><img src="img/blog/blog-list/1.jpg" alt=""><a class="ps-post__overlay" href="blog-detail.html"></a></div>
+              <div class="ps-post__thumbnail"><img src="{% static 'img/blog/blog-list/1.jpg' %}" alt=""><a class="ps-post__overlay" href="blog-detail.html"></a></div>
               <div class="ps-post__content">
                 <p class="ps-post__meta">March 31, 2019  by<a href="#"> Admin</a></p><a class="ps-post__title" href="blog-detail.html">Class aptent taciti sociosqu ad litora torquent per. Conubia vitae viverra urna nulla sed turpis</a>
                 <p>Sed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis feugiat, mollis felis vel, viverra metus. Sed vel nulla non neque dictum imperdiet.</p><a class="ps-post__morelink" href="blog-detail.html">Read More</a>
               </div>
             </div>
             <div class="ps-post">
-              <div class="ps-post__thumbnail"><img src="img/blog/blog-list/2.jpg" alt=""><a class="ps-post__overlay" href="blog-detail.html"></a></div>
+              <div class="ps-post__thumbnail"><img src="{% static 'img/blog/blog-list/2.jpg' %}" alt=""><a class="ps-post__overlay" href="blog-detail.html"></a></div>
               <div class="ps-post__content">
                 <p class="ps-post__meta">March 31, 2019  by<a href="#"> Admin</a></p><a class="ps-post__title" href="blog-detail.html">Class aptent taciti sociosqu ad litora torquent per. Conubia vitae viverra urna nulla sed turpis</a>
                 <p>Sed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis feugiat, mollis felis vel, viverra metus. Sed vel nulla non neque dictum imperdiet.</p><a class="ps-post__morelink" href="blog-detail.html">Read More</a>
               </div>
             </div>
             <div class="ps-post">
-              <div class="ps-post__thumbnail"><img src="img/blog/blog-list/3.jpg" alt=""><a class="ps-post__overlay" href="blog-detail.html"></a></div>
+              <div class="ps-post__thumbnail"><img src="{% static 'img/blog/blog-list/3.jpg' %}" alt=""><a class="ps-post__overlay" href="blog-detail.html"></a></div>
               <div class="ps-post__content">
                 <p class="ps-post__meta">March 31, 2019  by<a href="#"> Admin</a></p><a class="ps-post__title" href="blog-detail.html">Class aptent taciti sociosqu ad litora torquent per. Conubia vitae viverra urna nulla sed turpis</a>
                 <p>Sed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis feugiat, mollis felis vel, viverra metus. Sed vel nulla non neque dictum imperdiet.</p><a class="ps-post__morelink" href="blog-detail.html">Read More</a>
               </div>
             </div>
             <div class="ps-post">
-              <div class="ps-post__thumbnail"><img src="img/blog/blog-list/4.jpg" alt=""><a class="ps-post__overlay" href="blog-detail.html"></a></div>
+              <div class="ps-post__thumbnail"><img src="{% static 'img/blog/blog-list/4.jpg' %}" alt=""><a class="ps-post__overlay" href="blog-detail.html"></a></div>
               <div class="ps-post__content">
                 <p class="ps-post__meta">March 31, 2019  by<a href="#"> Admin</a></p><a class="ps-post__title" href="blog-detail.html">Class aptent taciti sociosqu ad litora torquent per. Conubia vitae viverra urna nulla sed turpis</a>
                 <p>Sed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis feugiat, mollis felis vel, viverra metus. Sed vel nulla non neque dictum imperdiet.</p><a class="ps-post__morelink" href="blog-detail.html">Read More</a>
@@ -339,25 +341,25 @@
             <aside class="widget widget_blog widget_recent-posts">
               <h3 class="widget-title">RECENT POST</h3>
               <div class="ps-post--sidebar">
-                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="img/blog/blog-sidebar/1.jpg" alt=""></div>
+                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="{% static 'img/blog/blog-sidebar/1.jpg' %}" alt=""></div>
                 <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Nam ac elit a ante commodo</a>
                   <p>By<a href="#"> Admin</a></p>
                 </div>
               </div>
               <div class="ps-post--sidebar">
-                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="img/blog/blog-sidebar/2.jpg" alt=""></div>
+                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="{% static 'img/blog/blog-sidebar/2.jpg' %}" alt=""></div>
                 <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Nam ac elit a ante commodo</a>
                   <p>By<a href="#"> Admin</a></p>
                 </div>
               </div>
               <div class="ps-post--sidebar">
-                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="img/blog/blog-sidebar/3.jpg" alt=""></div>
+                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="{% static 'img/blog/blog-sidebar/3.jpg' %}" alt=""></div>
                 <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Nam ac elit a ante commodo</a>
                   <p>By<a href="#"> Admin</a></p>
                 </div>
               </div>
               <div class="ps-post--sidebar">
-                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="img/blog/blog-sidebar/4.jpg" alt=""></div>
+                <div class="ps-post__thumbnail"><a class="ps-post__overlay" href="blog-detail.html"></a><img src="{% static 'img/blog/blog-sidebar/4.jpg' %}" alt=""></div>
                 <div class="ps-post__content"><a class="ps-post__title" href="blog-detail.html">Nam ac elit a ante commodo</a>
                   <p>By<a href="#"> Admin</a></p>
                 </div>
@@ -385,7 +387,7 @@
             </form>
           </div>
           <div class="ps-footer__center">
-            <div class="ps-site-info"><a class="ps-logo" href="index-2.html"><img src="img/logo.png" alt=""></a>
+            <div class="ps-site-info"><a class="ps-logo" href="index-2.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
               <p>004 Riley Street, Surry Hills 2050 Sydney, Australia</p>
               <p>Email:<a href="#"> <span class="__cf_email__" data-cfemail="7d14131b123d13120809151810180e531e1210">[email&#160;protected]</span></a></p>
               <p>Phone:<span class="ps-hightlight"> +455 45 454555</span></p>
@@ -434,24 +436,23 @@
       </div>
     </div>
     <!-- Plugins-->
-    <script src="plugins/jquery-1.12.4.min.js"></script>
-    <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
-    <script src="plugins/bootstrap4/js/bootstrap.min.js"></script>
-    <script src="plugins/imagesloaded.pkgd.js"></script>
-    <script src="plugins/masonry.pkgd.min.js"></script>
-    <script src="plugins/isotope.pkgd.min.js"></script>
-    <script src="plugins/jquery.matchHeight-min.js"></script>
-    <script src="plugins/slick/slick/slick.min.js"></script>
-    <script src="plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
-    <script src="plugins/slick-animation.min.js"></script>
-    <script src="plugins/lightGallery-master/dist/js/lightgallery-all.min.js"></script>
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <script src="plugins/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
-    <script src="plugins/jquery.slimscroll.min.js"></script>
-    <script src="plugins/select2/dist/js/select2.full.min.js"></script>
-    <script src="plugins/gmap3.min.js"></script>
-    <!-- Custom scripts-->
-    <script src="js/main.js"></script>
+    <script src="{% static 'plugins/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'plugins/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap4/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/imagesloaded.pkgd.js' %}"></script>
+    <script src="{% static 'plugins/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugins/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery.matchHeight-min.js' %}"></script>
+    <script src="{% static 'plugins/slick/slick/slick.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-bar-rating/dist/jquery.barrating.min.js' %}"></script>
+    <script src="{% static 'plugins/slick-animation.min.js' %}"></script>
+    <script src="{% static 'plugins/lightGallery-master/dist/js/lightgallery-all.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'plugins/sticky-sidebar/dist/sticky-sidebar.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery.slimscroll.min.js' %}"></script>
+    <script src="{% static 'plugins/select2/dist/js/select2.full.min.js' %}"></script>
+    <script src="{% static 'plugins/gmap3.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=REMOVED_API_KEY&amp;region=GB"></script>
   </body>
 
