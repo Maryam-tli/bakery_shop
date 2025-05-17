@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_bakery',
     'accounts',
-    'phonenumber_field',
+    'app_blog',
 ]
 
 MIDDLEWARE = [
