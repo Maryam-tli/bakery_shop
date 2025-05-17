@@ -39,86 +39,15 @@
       <div class="header__center">
         <nav class="header__navigation left">
           <ul class="menu">
-            <li class="menu-item-has-children"><a href="index-2.html">Home</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-              <ul class="sub-menu">
-                <li class="current-menu-item "><a href="index-2.html">Homepage 1</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-2.html">Homepage 2</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-3.html">Homepage 3</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-4.html">Homepage 4</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-5.html">Homepage 5</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-6.html">Homepage 6</a>
-                </li>
-              </ul>
+            <li class="menu-item-has-children"><a href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="menu-item-has-children"><a href="{% url 'home' %}">About</a>
             </li>
             <li class="menu-item-has-children"><a href="shop-default.html">Shop</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
               <ul class="sub-menu">
-                <li class="current-menu-item "><a href="shop-default.html">Shop Default</a>
-                </li>
-                <li class="current-menu-item "><a href="shop-fullwidth.html">Shop Fullwidth</a>
-                </li>
-                <li class="current-menu-item "><a href="shop-fullwidth-no-sidebar.html">Shop Fullwidth No Sidebar</a>
-                </li>
-                <li class="current-menu-item "><a href="shop-no-sidebar.html">Shop No Sidebar</a>
-                </li>
-                <li class="current-menu-item "><a href="shop-sidebar-right.html">Shop Sidebar Right</a>
-                </li>
-                <li class="current-menu-item "><a href="shop-horizontal.html">Shop Horizontal</a>
-                </li>
-                <li class="menu-item-has-children"><a href="product-default.html">Product</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-                  <ul class="sub-menu">
-                    <li class="current-menu-item "><a href="product-default.html">Product Default</a>
-                    </li>
-                    <li class="current-menu-item "><a href="product-background.html">Product Background</a>
-                    </li>
-                    <li class="current-menu-item "><a href="product-background-center.html">Product Background Center</a>
-                    </li>
-                    <li class="current-menu-item "><a href="product-background-center-2.html">Product Background Center 2</a>
-                    </li>
-                    <li class="current-menu-item "><a href="product-sticky.html">Product Sticky</a>
-                    </li>
-                    <li class="current-menu-item "><a href="product-thumbnail-left.html">Product Thumbnail Left</a>
-                    </li>
-                  </ul>
+                <li><a href="product-default.html">Product</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
                 </li>
               </ul>
-            </li>
-            <li class="current-menu-item "><a href="about-us.html">About</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="header__logo"><a class="ps-logo" href="index-2.html"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
-        <nav class="header__navigation right">
-          <ul class="menu">
-            <li class="menu-item-has-children"><a href="about-us.html">Pages</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-              <ul class="sub-menu">
-                <li class="current-menu-item "><a href="about-us.html">About</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-2.html">Checkout</a>
-                </li>
-                <li class="current-menu-item "><a href="whishlist.html">Whishlist</a>
-                </li>
-                <li class="current-menu-item "><a href="homepage-4.html">Compare</a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="blog-grid.html">News</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-              <ul class="sub-menu">
-                <li class="current-menu-item "><a href="blog-grid.html">Blog grid</a>
-                </li>
-                <li class="current-menu-item "><a href="blog-grid-fullwidth.html">Blog grid fullwidth</a>
-                </li>
-                <li class="current-menu-item "><a href="blog-list.html">Blog List</a>
-                </li>
-                <li class="current-menu-item "><a href="blog-detail.html">Blog Detail</a>
-                </li>
-              </ul>
-            </li>
-            <li class="current-menu-item "><a href="contact-us.html">Contact</a>
             </li>
           </ul>
         </nav>
@@ -194,87 +123,22 @@
       </div>
       <div class="ps-panel__content">
         <ul class="menu--mobile">
-          <li class="menu-item-has-children"><a href="index-2.html">Home</a><span class="sub-toggle"></span>
-            <ul class="sub-menu">
-              <li class="current-menu-item "><a href="index-2.html">Homepage 1</a>
-              </li>
-              <li class="current-menu-item "><a href="homepage-2.html">Homepage 2</a>
-              </li>
-              <li class="current-menu-item "><a href="homepage-3.html">Homepage 3</a>
-              </li>
-              <li class="current-menu-item "><a href="homepage-4.html">Homepage 4</a>
-              </li>
-              <li class="current-menu-item "><a href="homepage-5.html">Homepage 5</a>
-              </li>
-              <li class="current-menu-item "><a href="homepage-6.html">Homepage 6</a>
-              </li>
-            </ul>
+          <li><a href="{% url 'home' %}">Home</a>
+          </li>
+          <li><a href="{% url 'about' %}">About</a>
           </li>
           <li class="menu-item-has-children"><a href="shop-default.html">Shop</a><span class="sub-toggle"></span>
             <ul class="sub-menu">
-              <li class="current-menu-item "><a href="shop-default.html">Shop Default</a>
-              </li>
-              <li class="current-menu-item "><a href="shop-fullwidth.html">Shop Fullwidth</a>
-              </li>
-              <li class="current-menu-item "><a href="shop-fullwidth-no-sidebar.html">Shop Fullwidth No Sidebar</a>
-              </li>
-              <li class="current-menu-item "><a href="shop-no-sidebar.html">Shop No Sidebar</a>
-              </li>
-              <li class="current-menu-item "><a href="shop-sidebar-right.html">Shop Sidebar Right</a>
-              </li>
-              <li class="current-menu-item "><a href="shop-horizontal.html">Shop Horizontal</a>
-              </li>
-              <li class="menu-item-has-children"><a href="product-default.html">Product</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-                <ul class="sub-menu">
-                  <li class="current-menu-item "><a href="product-default.html">Product Default</a>
-                  </li>
-                  <li class="current-menu-item "><a href="product-background.html">Product Background</a>
-                  </li>
-                  <li class="current-menu-item "><a href="product-background-center.html">Product Background Center</a>
-                  </li>
-                  <li class="current-menu-item "><a href="product-background-center-2.html">Product Background Center 2</a>
-                  </li>
-                  <li class="current-menu-item "><a href="product-sticky.html">Product Sticky</a>
-                  </li>
-                  <li class="current-menu-item "><a href="product-thumbnail-left.html">Product Thumbnail Left</a>
-                  </li>
-                </ul>
+              <li><a href="product-default.html">Product</a><span class="sub-toggle"></span>
               </li>
             </ul>
           </li>
-          <li class="current-menu-item "><a href="about-us.html">About</a>
+          <li><a href="{% url 'blog' %}">News</a><span class="sub-toggle"></span>
           </li>
-          <li class="menu-item-has-children"><a href="about-us.html">Pages</a><span class="sub-toggle"></span>
-            <ul class="sub-menu">
-              <li class="current-menu-item "><a href="about-us.html">About</a>
-              </li>
-              <li class="current-menu-item "><a href="homepage-2.html">Checkout</a>
-              </li>
-              <li class="current-menu-item "><a href="whishlist.html">Whishlist</a>
-              </li>
-              <li class="current-menu-item "><a href="homepage-4.html">Compare</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-item-has-children"><a href="blog-grid.html">News</a><span class="sub-toggle"></span>
-            <ul class="sub-menu">
-              <li class="current-menu-item "><a href="blog-grid.html">Blog grid</a>
-              </li>
-              <li class="current-menu-item "><a href="blog-grid-full-width.html">Blog grid fullwidth</a>
-              </li>
-              <li class="current-menu-item "><a href="blog-list.html">Blog List</a>
-              </li>
-              <li class="current-menu-item "><a href="blog-detail.html">Blog Detail</a>
-              </li>
-            </ul>
-          </li>
-          <li class="current-menu-item "><a href="contact-us.html">Contact</a>
+          <li><a href="contact-us.html">Contact</a>
           </li>
         </ul>
       </div>
-    </div>
-    <div class="navigation--list">
-      <div class="navigation__content"><a class="navigation__item active" href="index-2.html"><i class="fa fa-home"></i></a><a class="navigation__item ps-toggle--sidebar" href="#navigation-mobile"><i class="fa fa-bars"></i></a><a class="navigation__item ps-toggle--sidebar" href="#search-sidebar"><i class="fa fa-search"></i></a><a class="navigation__item ps-toggle--sidebar" href="#cart-mobile"><i class="fa fa-shopping-basket"></i></a></div>
     </div>
     <!--include search-sidebar-->
     <div class="ps-page ps-page--product-detail">

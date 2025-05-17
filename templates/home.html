@@ -70,7 +70,7 @@
             </li>
             <li><a href="about-us.html">Pages</a>
             </li>
-            <li><a href="blog-grid.html">News</a>
+            <li><a href="{% url 'blog' %}">News</a>
             </li>
             <li><a href="{% url 'contact' %}">Contact</a>
             </li>
@@ -89,8 +89,6 @@
       </div>
     </div>
     <header class="header header--mobile" data-sticky="false">
-      <div class="header__content">
-        <div class="header__left"><a class="ps-toggle--sidebar" href="#navigation-mobile"><i class="fa fa-bars"></i></a></div>
         <div class="header__center"><a class="ps-logo" href="#"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
         <div class="header__right">
           <div class="header__actions"><a href="#"><i class="fa fa-heart-o"></i></a></div>
@@ -132,79 +130,17 @@
       </div>
       <div class="ps-panel__content">
         <ul class="menu--mobile">
-          <li class="current-menu-item menu-item-has-children"><a href="index-2.html">Home</a><span class="sub-toggle"></span>
-            <ul class="sub-menu">
-              <li><a href="index-2.html">Homepage 1</a>
-              </li>
-              <li><a href="homepage-2.html">Homepage 2</a>
-              </li>
-              <li><a href="homepage-3.html">Homepage 3</a>
-              </li>
-              <li><a href="homepage-4.html">Homepage 4</a>
-              </li>
-              <li><a href="homepage-5.html">Homepage 5</a>
-              </li>
-              <li><a href="homepage-6.html">Homepage 6</a>
-              </li>
-            </ul>
+          <li><a href="{% url 'home' %}">Home</a>
+          </li>
+          <li><a href="{% url 'about' %}">About</a>
           </li>
           <li class="menu-item-has-children"><a href="shop-default.html">Shop</a><span class="sub-toggle"></span>
             <ul class="sub-menu">
-              <li><a href="shop-default.html">Shop Default</a>
-              </li>
-              <li><a href="shop-fullwidth.html">Shop Fullwidth</a>
-              </li>
-              <li><a href="shop-fullwidth-no-sidebar.html">Shop Fullwidth No Sidebar</a>
-              </li>
-              <li><a href="shop-no-sidebar.html">Shop No Sidebar</a>
-              </li>
-              <li><a href="shop-sidebar-right.html">Shop Sidebar Right</a>
-              </li>
-              <li><a href="shop-horizontal.html">Shop Horizontal</a>
-              </li>
-              <li class="menu-item-has-children"><a href="product-default.html">Product</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-                <ul class="sub-menu">
-                  <li><a href="product-default.html">Product Default</a>
-                  </li>
-                  <li><a href="product-background.html">Product Background</a>
-                  </li>
-                  <li><a href="product-background-center.html">Product Background Center</a>
-                  </li>
-                  <li><a href="product-background-center-2.html">Product Background Center 2</a>
-                  </li>
-                  <li><a href="product-sticky.html">Product Sticky</a>
-                  </li>
-                  <li><a href="product-thumbnail-left.html">Product Thumbnail Left</a>
-                  </li>
-                </ul>
+              <li><a href="product-default.html">Product</a><span class="sub-toggle"></span>
               </li>
             </ul>
           </li>
-          <li><a href="about-us.html">About</a>
-          </li>
-          <li class="current-menu-item menu-item-has-children"><a href="about-us.html">Pages</a><span class="sub-toggle"></span>
-            <ul class="sub-menu">
-              <li><a href="about-us.html">About</a>
-              </li>
-              <li><a href="homepage-2.html">Checkout</a>
-              </li>
-              <li><a href="whishlist.html">Whishlist</a>
-              </li>
-              <li><a href="homepage-4.html">Compare</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-item-has-children"><a href="blog-grid.html">News</a><span class="sub-toggle"></span>
-            <ul class="sub-menu">
-              <li><a href="blog-grid.html">Blog grid</a>
-              </li>
-              <li><a href="blog-grid-full-width.html">Blog grid fullwidth</a>
-              </li>
-              <li><a href="blog-list.html">Blog List</a>
-              </li>
-              <li><a href="blog-detail.html">Blog Detail</a>
-              </li>
-            </ul>
+          <li><a href="{% url 'blog' %}">News</a><span class="sub-toggle"></span>
           </li>
           <li><a href="contact-us.html">Contact</a>
           </li>
@@ -212,7 +148,7 @@
       </div>
     </div>
     <div class="navigation--list">
-      <div class="navigation__content"><a class="navigation__item active" href="index-2.html"><i class="fa fa-home"></i></a><a class="navigation__item ps-toggle--sidebar" href="#navigation-mobile"><i class="fa fa-bars"></i></a><a class="navigation__item ps-toggle--sidebar" href="#search-sidebar"><i class="fa fa-search"></i></a><a class="navigation__item ps-toggle--sidebar" href="#cart-mobile"><i class="fa fa-shopping-basket"></i></a></div>
+      <div class="navigation__content"><a class="navigation__item active" href="{% url 'home' %}"><i class="fa fa-home"></i></a><a class="navigation__item ps-toggle--sidebar" href="#navigation-mobile"><i class="fa fa-bars"></i></a><a class="navigation__item ps-toggle--sidebar" href="#search-sidebar"><i class="fa fa-search"></i></a><a class="navigation__item ps-toggle--sidebar" href="#cart-mobile"><i class="fa fa-shopping-basket"></i></a></div>
     </div>
     <!--include search-sidebar-->
     <div id="homepage-1">
@@ -665,7 +601,8 @@
           </div>
         </div>
         <div class="ps-section__right" id="reservation-form">
-          <form class="ps-form--book-your-table" action="#" method="get">
+          <form class="ps-form--book-your-table" action="{% url 'home' %}" method="post">
+            {% csrf_token %}
             <div class="ps-form__header">
               <h4>Chikery Cake</h4>
               <h3>Book your table</h3><i class="chikery-tt3"></i>
@@ -675,38 +612,38 @@
               <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="name">
+                    <input class="form-control" type="text" name="name" placeholder="name">
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="phone">
+                    <input class="form-control" type="text" name="phone" placeholder="phone">
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="email" placeholder="email">
+                    <input class="form-control" type="email" name="email" placeholder="email">
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="guests">
+                    <input class="form-control" type="number" name="guests" placeholder="number of person">
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="date">
+                    <input class="form-control" type="text" name="date" placeholder="date">
                   </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
                   <div class="form-group">
-                    <input class="form-control" type="text" placeholder="time">
+                    <input class="form-control" type="text" name="time" placeholder="time">
                   </div>
                 </div>
               </div>
             </div>
             <div class="ps-form__footer">
-              <button class="ps-btn">Book Now</button>
+              <button class="ps-btn" type="submit">Book Now</button>
             </div>
           </form>
         </div>
@@ -727,7 +664,7 @@
             </form>
           </div>
           <div class="ps-footer__center">
-            <div class="ps-site-info"><a class="ps-logo" href="index-2.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            <div class="ps-site-info"><a class="ps-logo" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
               <p>004 Riley Street, Surry Hills 2050 Sydney, Australia</p>
               <p>Email:<a href="#"> <span class="__cf_email__" data-cfemail="1d74737b725d73726869757870786e337e7270">[email&#160;protected]</span></a></p>
               <p>Phone:<span class="ps-hightlight"> +455 45 454555</span></p>
