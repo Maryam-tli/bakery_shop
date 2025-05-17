@@ -10348,3 +10348,58 @@ html {
     border-radius: 12px;
     display: block;
 }
+
+.pagination-wrapper {
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #4e342e;
+}
+
+.pagination-list {
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+  margin: 10px auto;
+  gap: 6px;
+}
+
+.pagination-list li {
+  display: inline;
+}
+
+.pagination-list li a,
+.pagination-list li span {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: #d7ccc8;
+  color: #4e342e;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid #a1887f;
+}
+
+.pagination-list li a:hover {
+  background-color: #8d6e63;
+  color: #fff;
+}
+
+.pagination-list li.active span {
+  background-color: #4e342e;
+  color: #fff;
+  cursor: default;
+  border: none;
+  box-shadow: 0 0 0 2px #d7ccc8;
+}
+
+.pagination-list li span {
+  background-color: #fbe9e7;
+  color: #6d4c41;
+}
+
+.pagination-info {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #5d4037;
+}
