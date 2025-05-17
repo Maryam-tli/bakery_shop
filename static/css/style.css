@@ -10340,3 +10340,11 @@ html .bg--parallax {
 html {
   scroll-behavior: smooth;
 }
+
+.post-image {
+    width: 300px;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
