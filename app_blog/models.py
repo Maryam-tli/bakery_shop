@@ -16,7 +16,7 @@ class Post(models.Model):
     slug = models.SlugField(unique=True, blank=True, null=True)
     content = models.TextField()
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    category = models.ManyToManyField(Category, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     image = models.ImageField(upload_to='posts/', blank=True, null=True, default='posts/default.jpg')
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
