@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'app_bakery',
     'accounts',
     'app_blog',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
