@@ -37,9 +37,11 @@ def blog_detail_view(request, slug):
         prev_post = posts[index - 1]
     else:
         prev_post = None
+
     if index < len(posts) - 1:
         next_post = posts[index + 1]
     else:
         next_post = None
-    context = {'class_post' : class_post}
-    return render(request, 'blog-detail.html')
+        
+    context = {'class_post' : class_post, 'prev_post': prev_post, 'next_post': next_post,}
+    return render(request, 'blog-detail.html', context)
