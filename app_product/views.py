@@ -3,8 +3,19 @@ from app_product.models import *
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # Create your views here.
-def home_shop_view(request):
+def home_shop_view(request, cat_slug = None):
     products = Product.objects.filter(status=0, available=True)
+    categories = Pro_Category.objects.all()
+    categories_dict = {}
+    for item in categories:
+        categories_dict[item] = Product.objects.filter(status=0, available=True, pro_category = item).count()
+        
+    selected_category = None
+    if cat_slug:
+        selected_category = get_object_or_404(Pro_Category, slug=cat_slug)
+        products = products.filter(pro_category=selected_category)
+
+
     p = Paginator(products, 9)
     try:
         page_number = request.GET.get('page')
@@ -14,7 +25,7 @@ def home_shop_view(request):
     except EmptyPage:
         page_obj = p.get_page(p.num_pages)
 
-    context={'page_obj' : page_obj}
+    context={'page_obj' : page_obj, 'categories' : categories_dict, 'selected_category' : selected_category}
     return render(request, 'product-list.html', context)
 
 
