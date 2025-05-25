@@ -37,7 +37,7 @@
         </ul>
       </div>
       <div class="header__center">
-        <nav class="header__navigation left">
+         <nav class="header__navigation left">
           <ul class="menu">
             <li class="menu-item-has-children"><a href="{% url 'home' %}">Home</a>
             </li>
@@ -48,6 +48,15 @@
                 <li><a href="product-default.html">Product</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
                 </li>
               </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__logo"><a class="ps-logo" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
+        <nav class="header__navigation right">
+          <ul class="menu">
+            <li><a href="blog-grid.html">News</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
+            </li>
+            <li class="current-menu-item "><a href="contact-us.html">Contact</a>
             </li>
           </ul>
         </nav>
@@ -146,7 +155,7 @@
         <div class="ps-hero__container">
           <div class="ps-breadcrumb">
             <ul class="breadcrumb">
-              <li><a href="index-2.html">Home</a></li>
+              <li><a href="{% url 'home' %}">Home</a></li>
               <li>Blog Grid</li>
             </ul>
           </div>
@@ -159,8 +168,8 @@
           <div class="ps-blog__left">
             <div class="ps-post">
               <div class="ps-post__thumbnail">
-                <img src="{{ item.image.url }}" alt="" class="post-image">
-                <a class="ps-post__overlay" href="#"></a>
+                <img src="{{ item.image.url }}" alt="{{ item.title }}" class="post-image">
+                <a class="ps-post__overlay" href="{% url 'detail' item.slug %}"></a>
               </div>
               <div class="ps-post__content">
                 <p class="ps-post__meta">
@@ -169,7 +178,7 @@
                   <a href="{% url 'detail' item.slug %}">{{ item.author }}</a>
                 </p>
                 <a class="ps-post__title" href="{% url 'detail' item.slug %}">{{ item.title }}</a>
-                <p>{{ item.content|truncatewords:35 }}</p>
+                <p>{{ item.content|striptags|truncatewords:35 }}</p>
                 <a class="ps-post__morelink" href="{% url 'detail' item.slug %}">Read More</a>
               </div>
             </div>
