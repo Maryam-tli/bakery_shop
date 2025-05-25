@@ -41,13 +41,18 @@
           <ul class="menu">
             <li class="menu-item-has-children"><a href="{% url 'home' %}">Home</a>
             </li>
-            <li class="menu-item-has-children"><a href="{% url 'home' %}">About</a>
+            <li class="menu-item-has-children"><a href="{% url 'about' %}">About</a>
             </li>
-            <li class="menu-item-has-children"><a href="shop-default.html">Shop</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-              <ul class="sub-menu">
-                <li><a href="product-default.html">Product</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-                </li>
-              </ul>
+            <li class="menu-item-has-children"><a href="{% url 'shop' %}">Shop</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__logo"><a class="ps-logo" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
+        <nav class="header__navigation right">
+          <ul class="menu">
+            <li><a href="{% url 'blog' %}">News</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
+            </li>
+            <li class="current-menu-item "><a href="contact-us.html">Contact</a>
             </li>
           </ul>
         </nav>
@@ -150,6 +155,11 @@
           </ul>
         </div>
         <h1 class="ps-hero__heading">Shop Products</h1>
+        <div>
+          {% if selected_category %}
+            <h4 class="ps-hero__heading">Category: {{ selected_category.name }}</h4>
+          {% endif %}
+        </div>
       </div>
     </div>
     <div class="ps-page--shop">
@@ -159,11 +169,12 @@
             <aside class="widget widget_shop widget_categories">
               <h3 class="widget-title">Categories</h3>
               <ul>
-                <li><a href="shop-default.html">Bready</a></li>
-                <li><a href="shop-default.html">Pinpool</a></li>
-                <li><a href="shop-default.html">Deliciuex</a></li>
-                <li><a href="shop-default.html">Cake</a></li>
-                <li><a href="shop-default.html">Cupke</a></li>
+                {% for cat_name, count_cat in categories.items %}
+                  <li>
+                    <a href="{% url 'category' cat_name.slug %}">{{ cat_name }}</a>
+                    <span style="float: right;">{{ count_cat }}</span>
+                  </li>
+                {% endfor %}
               </ul>
             </aside>
             <aside class="widget widget_shop widget_shop-filter">
@@ -225,13 +236,25 @@
             </div>
             <div class="ps-product-box">
               <div class="row">
+                {% for item in page_obj %}
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
                   <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/1.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
+                    <div class="ps-product__thumbnail"><img src="{{ item.image.url }}" alt=""/><a class="ps-product__overlay" href="{% url 'detail' item.slug %}"></a>
                     </div>
                     <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price">$12.00</span>
+                      <div class="ps-product__desc"><a class="ps-product__title" href="{% url 'detail' item.slug %}">{{ item.name }}</a>
+                        <p><span>{{ item.flavor }} </span></p>
+                        <span class="ps-product__price">
+                          {% if item.discount_percent %}
+                            <p>
+                              <del style="color:gray;">${{ item.price }}</del>
+                              &nbsp;
+                              <span style="color:red; font-weight:bold;">${{ item.get_final_price|floatformat:2 }}</span>
+                            </p>
+                          {% else %}
+                          <p>${{ item.price }}</p>
+                          {% endif %}
+                        </span>
                       </div>
                       <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
                         <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
@@ -239,170 +262,34 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/2.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price">$12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/3.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price">$12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/4.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a><span class="ps-badge ps-badge--sale"><i>30%</i></span>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price sale"><del>$16.00</del> $12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/5.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price">$12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/6.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price">$12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/7.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a><span class="ps-badge ps-badge--sale"><i>30%</i></span>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price sale"><del>$16.00</del> $12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/8.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price">$12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/9.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price">$12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/10.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price">$12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/11.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price">$12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
-                  <div class="ps-product">
-                    <div class="ps-product__thumbnail"><img src="{% static 'img/product/12.png' %}" alt=""/><a class="ps-product__overlay" href="product-default.html"></a>
-                    </div>
-                    <div class="ps-product__content">
-                      <div class="ps-product__desc"><a class="ps-product__title" href="product-default.html">Red sugar flower</a>
-                        <p><span>350g</span><span>30 Min</span><span>120 <sup>o</sup>C</span></p><span class="ps-product__price">$12.00</span>
-                      </div>
-                      <div class="ps-product__shopping"><a class="ps-btn ps-product__add-to-cart" href="#">Add to cart</a>
-                        <div class="ps-product__actions"><a href="#"><i class="fa fa-heart-o"></i></a><a href="#"><i class="fa fa-random"></i></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
-            <div class="ps-pagination">
-              <ul class="pagination">
-                <li><a href="#"><i class="fa fa-caret-left"></i></a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#"><i class="fa fa-caret-right"></i></a></li>
+            <div class="pagination-wrapper classy-style">
+              <ul class="pagination-list">
+                {% if page_obj.has_previous %}
+                  <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; Prev</a></li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                  {% if num == page_obj.number %}
+                    <li class="active"><span>{{ num }}</span></li>
+                  {% elif num >= page_obj.number|add:'-2' and num <= page_obj.number|add:'2' %}
+                    <li><a href="?page={{ num }}">{{ num }}</a></li>
+                  {% elif num == 1 or num == page_obj.paginator.num_pages %}
+                    <li><a href="?page={{ num }}">{{ num }}</a></li>
+                  {% elif num == page_obj.number|add:'-3' or num == page_obj.number|add:'3' %}
+                    <li><span>…</span></li>
+                  {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                  <li><a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a></li>
+                {% endif %}
               </ul>
+              <div class="pagination-info">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+              </div>
             </div>
           </div>
         </div>
