@@ -37,7 +37,7 @@
         </ul>
       </div>
       <div class="header__center">
-        <nav class="header__navigation left">
+         <nav class="header__navigation left">
           <ul class="menu">
             <li class="menu-item-has-children"><a href="{% url 'home' %}">Home</a>
             </li>
@@ -48,6 +48,15 @@
                 <li><a href="product-default.html">Product</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
                 </li>
               </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__logo"><a class="ps-logo" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a></div>
+        <nav class="header__navigation right">
+          <ul class="menu">
+            <li><a href="{% url 'blog' %}">News</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
+            </li>
+            <li class="current-menu-item "><a href="contact-us.html">Contact</a>
             </li>
           </ul>
         </nav>
@@ -146,28 +155,74 @@
         <div class="ps-hero__container">
           <div class="ps-breadcrumb">
             <ul class="breadcrumb">
-              <li><a href="index-2.html">Home</a></li>
+              <li><a href="{% url 'home' %}">Home</a></li>
               <li>Blog Grid</li>
             </ul>
           </div>
           <div class="ps-post--detail-header">
-            <h1>Mauris elementum accumsan <br/> leo vel tempor</h1>
-            <div class="ps-post__meta"><span>Food</span><span>March 31, 2019  by <a href="#">Admin</a></span></div>
+            <h1>{{ class_post.title }}</h1>
+            <div class="ps-post__meta"><span>{{ class_post.published_date|date:"D d M Y" }}</span><span><a href="#">{{ class_post.author }}</a></span></div>
           </div>
         </div>
       </div>
-      <div class="ps-hero--blog"><img src="{% static 'img/blog/blog-detail.jpg' %}" alt=""></div>
+      <div class="ps-hero--blog"><img src="{{ class_post.image.url }}" alt="{{ class_post.title }} " class="post-image-full"></div>
       <div class="container">
         <div class="ps-blog ps-blog--sidebar">
           <div class="ps-blog__left">
             <div class="ps-post--detail">
               <div class="ps-post__content">
-                <p><strong class="large">Class aptent taciti sociosqu ad litora torquent per. Conubia vitae viverra urna nulla sed turpis .Mauris elementum accumsan leo vel tempor</strong></p>
-                <p>Sed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed turpis feugiat, mollis felis vel, viverra metus. Sed vel nulla non neque dictum imperdiet.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse faucibus sed dolor eget posuere.Sed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet.Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Suspendisse faucibus sed dolor eget posuere.Sed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet.Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>{{ class_post.content|safe }}</p>
                 <div class="ps-post__tags"><span>Tags</span><a href="#">Branding</a><a href="#">Interior</a><a href="#">Bakery</a></div>
               </div>
             </div>
+            <div class="navigation-area">
+					    <div class="row">
+				
+						<!-- Prev Post -->
+					      <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+						      {% if prev_post %}
+						      <div class="thumb">
+							      <a href="{% url 'detail' slug=prev_post.slug %}">
+								      <img class="img-fluid" src="{% static 'img/blog/prev_button.png' %}" alt="">
+							      </a>
+						      </div>
+						      <div class="arrow">
+							      <a href="{% url 'detail' slug=prev_post.slug %}">
+								      <span class="lnr text-white lnr-arrow-left"></span>
+							      </a>
+						      </div>
+						      <div class="detials">
+							      <p>Prev Post</p>
+							      <a href="{% url 'detail' slug=prev_post.slug %}">
+								      <h4>{{ prev_post.title }}</h4>
+							      </a>
+						      </div>
+						      {% endif %}
+					      </div>
+				
+					      <!-- Next Post -->
+					      <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+						      {% if next_post %}
+						      <div class="detials">
+							      <p>Next Post</p>
+							      <a href="{% url 'detail' slug=next_post.slug %}">
+								      <h4>{{ next_post.title }}</h4>
+							      </a>
+						      </div>
+						      <div class="arrow">
+							      <a href="{% url 'detail' slug=next_post.slug %}">
+								      <span class="lnr text-white lnr-arrow-right"></span>
+							      </a>
+						      </div>
+						      <div class="thumb">
+							      <a href="{% url 'detail' slug=next_post.slug %}">
+								      <img class="img-fluid" src="{% static 'img/blog/next_button.png' %}" alt="">
+							      </a>
+						      </div>
+						      {% endif %}
+					      </div>
+				      </div>
+			      </div><br/>
             <div class="ps-blog-comments">
               <h3>Comments <span>(02)</span></h3>
               <div class="ps-comment-box">
