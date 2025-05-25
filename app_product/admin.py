@@ -2,11 +2,11 @@ from django.contrib import admin
 from app_product.models import *
 
 # Register your models here.
-class CategoryAdmin(admin.ModelAdmin):
-    fields = ['name',]
+class Pro_CategoryAdmin(admin.ModelAdmin):
+    fields = ['name','slug']
     list_display = ['name',]
 
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(Pro_Category, Pro_CategoryAdmin)
 
 class ProductTypeAdmin(admin.ModelAdmin):
     fields = ['name',]
@@ -21,9 +21,9 @@ class FlavorAdmin(admin.ModelAdmin):
 admin.site.register(Flavor, FlavorAdmin)
 
 class ProductAdmin(admin.ModelAdmin):
-    fields = ['name','slug','product_type','flavor','category','description','price','discount_percent','image','available', 'status']
+    fields = ['name','slug','product_type','flavor','pro_category','description','price','discount_percent','image','available', 'status']
     list_display = ['name','price','discount_percent','available','get_final_price', 'status']
-    search_fields = ['name', 'discount_percent','available',]
+    search_fields = ['name', 'discount_percent','available','pro_category']
     
     def get_final_price(self, obj):
         return f"{obj.get_final_price():.2f}"
