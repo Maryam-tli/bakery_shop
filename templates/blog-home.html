@@ -41,13 +41,9 @@
           <ul class="menu">
             <li class="menu-item-has-children"><a href="{% url 'home' %}">Home</a>
             </li>
-            <li class="menu-item-has-children"><a href="{% url 'home' %}">About</a>
+            <li class="menu-item-has-children"><a href="{% url 'about' %}">About</a>
             </li>
-            <li class="menu-item-has-children"><a href="shop-default.html">Shop</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-              <ul class="sub-menu">
-                <li><a href="product-default.html">Product</a><span class="sub-toggle"><i class="fa fa-angle-down"></i></span>
-                </li>
-              </ul>
+            <li class="menu-item-has-children"><a href="{% url 'shop' %}">Shop</a>
             </li>
           </ul>
         </nav>
